@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+}
 :root {
    --primary-Violet: hsl(257, 40%, 49%);
    --primary-Soft-Magenta: hsl(300, 69%, 71%);
@@ -10,7 +17,8 @@
  }
 body {
     background-image: url(images/bg-mobile.svg);
-    height: 100%;
+    background-color: var(--primary-Violet);
+    height: auto;
     width: 100%;
 }
 img {
@@ -18,16 +26,15 @@ img {
 }
 
 .parent_container {
-    background-color: var(--primary-Violet);
     width: 100%;
     height: 100%;
-    ;
 }
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    height: auto;
 }
 .container .writeup .main_title {
     font-family: Poppins;
@@ -36,16 +43,26 @@ img {
 }
 
 .container .writeup .title {
-    font-family: Poppins;
+    font-family: Open Sans;
     color: var(--color-White);
     font-weight: 400;
+    padding-top: 0.156rem;
+}
+.container .cta .writeup,{
+    padding-top: 0.156rem;
+}
+.container .cta {
+    padding-top: 1.875rem;
 }
 .container .cta button {
     width: 60%;
     padding: 0.625rem;
     border-radius: 1.25rem;
     color: var(--primary-Violet);
-    border: none;
+    border: 1px solid color none;
+}
+.container .cta button:hover{
+    background-color: var(--primary-Soft-Magenta);
 }
 .container .icon {
     display: flex;
@@ -59,4 +76,54 @@ img {
     border: 1px solid var(--color-White);
     border-radius: 50%;
     color: var(--color-White);
+    padding: 0.313rem;
+    
+}
+.container .icon .instagram:hover {
+    border-color: var(--primary-Soft-Magenta);
+}
+.container .icon .facebook:hover {
+    border-color: var(--primary-Soft-Magenta);
+}
+.container .icon .twitter:hover {
+    border-color: var(--primary-Soft-Magenta);
+}
+@media only screen and (min-width: 992px) {
+    body {
+        background-image: url(images/bg-desktop.svg);
+        background-size: contain;
+    }
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: 100px;
+        text-align: left;
+    }
+      img {
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+    .writeup, .cta {
+        margin-left: 50px;
+   }
+    .writeup .main_title {
+        margin-bottom: 30px;
+        margin-top: 100px;
+        margin-left: 40px;
+    }
+    .container .writeup .title {
+        margin-bottom: 30px;
+        margin-left: 50px;
+    }
+    .container .cta button {
+        width: 20%;
+        padding: 15px;
+    }
+    .container .icon {
+    position: absolute;
+    right: 60px;
+    bottom: 20px;
+   
+    }
 }
